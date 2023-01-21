@@ -10,4 +10,3 @@ export function classNames(cls: string, mods:Mods={}, additional: string[]=[]):s
     ].join(" ")
 }
 
-classNames("remove-btn", {hovered:false, selectable: true, red:true}, ["pdg"] )
