@@ -36,7 +36,9 @@ export const Sidebar = ({ className }:SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-            <div className={cls.switchers}>
+            <div
+                className={cls.switchers}
+            >
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
             </div>
