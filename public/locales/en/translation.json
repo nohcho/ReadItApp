@@ -11,6 +11,9 @@
   "Переключить": "Switch",
   "Главная": "Main",
   "О сайте": "About us",
-  "Короткий язык": "En"
-
+  "Короткий язык": "En",
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement",
+  "Временный счетчик для проверки": "Temporary counter for testing"
 }
