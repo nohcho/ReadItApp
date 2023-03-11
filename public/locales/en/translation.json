@@ -15,5 +15,8 @@
   "Войти": "Login",
   "increment": "increment",
   "decrement": "decrement",
-  "Временный счетчик для проверки": "Temporary counter for testing"
+  "Временный счетчик для проверки": "Temporary counter for testing",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
+
 }
