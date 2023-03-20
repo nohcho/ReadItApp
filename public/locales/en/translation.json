@@ -12,11 +12,14 @@
   "Главная": "Main",
   "О сайте": "About us",
   "Короткий язык": "En",
-  "Войти": "Login",
+  "Войти": "Log in",
   "increment": "increment",
   "decrement": "decrement",
   "Временный счетчик для проверки": "Temporary counter for testing",
   "Введите username": "Enter your username",
-  "Введите пароль": "Enter your password"
+  "Введите пароль": "Enter your password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Выйти": "Log out"
 
 }

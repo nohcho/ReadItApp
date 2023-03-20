@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -31,7 +31,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={cls.collapseBtn}
-                theme={ThemeButton.BACKGROUND_INVERTED}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
                 size={ButtonSize.L}
                 square
             >
