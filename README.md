@@ -4,6 +4,9 @@ in process
 ## npm start
 Runs the app
 
+## start:dev:server
+Runs fake server
+
 ## npm run build:dev
 Builds the app for development
 
