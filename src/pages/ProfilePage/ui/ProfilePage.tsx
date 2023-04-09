@@ -17,7 +17,7 @@ const ProfilePage = ({ className }:ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
-                {t('Profile Page')}
+                {t('Cтраница профиля')}
             </div>
         </DynamicModuleLoader>
     );
