@@ -6,6 +6,9 @@ Runs the app
 
 ## start:dev:server
 Runs fake server
+Enter to log in:
+username: admin
+password: 123
 
 ## npm run build:dev
 Builds the app for development
