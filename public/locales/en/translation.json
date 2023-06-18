@@ -22,5 +22,6 @@
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
   "Выйти": "Log out",
   "Профиль": "Profile",
-  "Cтраница профиля": "Profile page"
+  "Cтраница профиля": "Profile page",
+  "Для того, чтобы войти запустите бэкенд и введите логин и пароль, указанный в README": "To log in, run the backend and enter the username and password specified in the README"
 }
