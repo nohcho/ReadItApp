@@ -1,7 +1,6 @@
 {
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
-  "Главная страница": "Main page",
   "Язык": "English",
   "новый перевод": "new translation",
   "Страница не найдена": "Page not found",
@@ -15,7 +14,6 @@
   "Войти": "Log in",
   "increment": "increment",
   "decrement": "decrement",
-  "Временный счетчик для проверки": "Temporary counter for testing",
   "Введите username": "Enter your username",
   "Введите пароль": "Enter your password",
   "Форма авторизации": "Auth form",
@@ -25,5 +23,4 @@
   "Cтраница профиля": "Profile page",
   "Укажите валюту": "Choose currency",
   "Укажите страну": "Choose country",
-  "Подсказка": "To log in, run the backend and enter the username and password specified in the README"
 }
