@@ -3,7 +3,7 @@ import { Counter } from 'entities/Counter';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 const MainPage = () => {
-    const { t } = useTranslation('main');
+    const { t } = useTranslation('');
     return (
         <div>
             {t('Главная страница')}
