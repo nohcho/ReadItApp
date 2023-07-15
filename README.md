@@ -1,6 +1,9 @@
 # ReadItApp
 in process
 
+## start:dev
+Runs app and server
+
 ## npm start
 Runs the app
 
