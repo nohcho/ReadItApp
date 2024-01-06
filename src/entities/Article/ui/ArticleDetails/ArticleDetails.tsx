@@ -5,7 +5,7 @@ import {
     ReducersList,
 } from 'shared/config/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/config/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     getArticleDetailsData,
@@ -14,7 +14,15 @@ import {
 } from 'entities/Article/model/selectors/articleDetails';
 import { useSelector } from 'react-redux';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 
@@ -32,6 +40,37 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.CODE:
+            return (
+                <ArticleCodeBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                />
+            );
+        case ArticleBlockType.IMAGE:
+            return (
+                <ArticleImageBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                />
+            );
+        case ArticleBlockType.TEXT:
+            return (
+                <ArticleTextBlockComponent
+                    key={block.id}
+                    className={cls.block}
+                    block={block}
+                />
+            );
+        default:
+            return null;
+        }
+    }, []);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -60,7 +99,30 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         );
     } else {
         content = (
-            <div> ARTICLE DETAILS </div>
+            <>
+                <div className={cls.avatarWrapper}>
+                    <Avatar
+                        size={200}
+                        src={article?.img}
+                        className={cls.avatar}
+                    />
+                </div>
+                <Text
+                    className={cls.title}
+                    title={article?.title}
+                    text={article?.subtitle}
+                    size={TextSize.L}
+                />
+                <div className={cls.articleInfo}>
+                    <Icon className={cls.icon} Svg={EyeIcon} />
+                    <Text text={String(article?.views)} />
+                </div>
+                <div className={cls.articleInfo}>
+                    <Icon className={cls.icon} Svg={CalendarIcon} />
+                    <Text text={article?.createdAt} />
+                </div>
+                {article?.blocks.map(renderBlock)}
+            </>
         );
     }
 
